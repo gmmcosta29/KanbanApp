@@ -1,0 +1,37 @@
+# Xcode
+.DS_Store
+*.xcuserdatad
+*.xcuserstate
+build/
+DerivedData/
+Pods/
+.swiftpm/
+
+# CocoaPods (if you use it)
+Pods/
+Podfile.lock
+
+# Carthage (if you use it)
+Carthage/
+
+# Swift Package Manager (if you use it)
+.build/
+Package.resolved
+
+# Other
+*.o
+*.d
+*.hmap
+*.ipa
+*.xcarchive
+*.xccheckout
+*.xcscheme
+!default.xcscheme
+!*.xcscheme # Ignore all schemes except default.xcscheme
+!project.xcworkspace/contents.xcworkspacedata # Important for projects with workspaces
+
+# User-specific files
+xcuserdata/
+
+# Swift Playgrounds
+*.playground/
