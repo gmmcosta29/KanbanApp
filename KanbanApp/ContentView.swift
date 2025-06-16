@@ -64,8 +64,11 @@ struct ContentView: View {
                     //todo
                     todoColumn._cards.append(Card(title: "Testar a BD", description: "Criar e destruir dados", creation_date: Date()))
                     todoColumn._cards.append(Card(title: "Test Sort", description: "testing sort", creation_date: Date()))
-                    todoColumn._cards.append(Card(title: "Testar este projeto", description: "Testar em diversos modelos", creation_date: Date()))                    //
+                    todoColumn._cards.append(Card(title: "Testar este projeto", description: "Testar em diversos modelos", creation_date: Date()))
+                    
+                    //
                     todoColumn._cards.append(Card(title: "Criar a v1.1", description: "asdfsf", creation_date: Date()))
+                    
                     //progress
                     inProgressColumn._cards.append(Card(title: "Finalizar a APP", description: "Teste123", creation_date: Date()))
                     
