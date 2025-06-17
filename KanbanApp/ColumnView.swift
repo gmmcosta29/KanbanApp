@@ -12,6 +12,9 @@ import SwiftData
 
 struct ColumnView: View {
     @Bindable var column: Column
+    @Environment(\.modelContext) var modelContext
+    
+    @State private var showAddCardView = false
     
     var body: some View {
         VStack(alignment: .leading){
@@ -19,12 +22,10 @@ struct ColumnView: View {
                 .font(.headline)
                 .padding(.bottom,8)
             Button("+"){
-                let addCard = Card(title: "New Card", description: "Description")
-                column._cards.append(addCard)
-            }
+                showAddCardView = true            }
             .font(.title2)
             .foregroundColor(.green)
-                
+            
             ForEach(column._cards.sorted(using: SortDescriptor(\._creation_date))) { card in
                 CardView(card: card, column: column)
                     .padding(.bottom,6)
@@ -35,6 +36,9 @@ struct ColumnView: View {
         .padding(20)
         .background(Color(.systemGray6))
         .cornerRadius(12)
+        .sheet(isPresented: $showAddCardView){
+            AddCardView(column: column)
+        }
     }
 }
 struct ColumnView_Previews: PreviewProvider {
