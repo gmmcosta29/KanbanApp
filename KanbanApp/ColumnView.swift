@@ -18,15 +18,21 @@ struct ColumnView: View {
             Text(column._name)
                 .font(.headline)
                 .padding(.bottom,8)
+            Button("+"){
+                let addCard = Card(title: "New Card", description: "Description")
+                column._cards.append(addCard)
+            }
+            .font(.title2)
+            .foregroundColor(.green)
                 
             ForEach(column._cards.sorted(using: SortDescriptor(\._creation_date))) { card in
-                CardView(card: card)
+                CardView(card: card, column: column)
                     .padding(.bottom,6)
             }
             Spacer()
         }
         .frame(width: 300)
-        .padding(10)
+        .padding(20)
         .background(Color(.systemGray6))
         .cornerRadius(12)
     }
