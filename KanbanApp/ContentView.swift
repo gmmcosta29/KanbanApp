@@ -56,9 +56,9 @@ struct ContentView: View {
             }            
             .onAppear{
                 if columns.isEmpty{
-                    let todoColumn = Column(name: "To Do", id: 0)
-                    let inProgressColumn = Column(name: "Progress", id: 1)
-                    let doneColumn = Column(name: "Done", id: 2)
+                    let todoColumn = Column(name: "To Do", id: 1)
+                    let inProgressColumn = Column(name: "Progress", id: 2)
+                    let doneColumn = Column(name: "Done", id: 3)
                     
                     //hardcode v1 use cases
                     //todo
