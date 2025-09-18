@@ -25,8 +25,8 @@ struct AddCardView: View {
                 Section(header: Text("Card Details")) {
                     TextField("Title", text: $title)
                     TextField("Description (optional)", text: $description,axis: .vertical)
-                        .lineLimit(3...6)
                     DatePicker("Date", selection: $date)
+                        .datePickerStyle(.wheel)
                 }
             }
             .navigationTitle("New Card")
@@ -46,9 +46,9 @@ struct AddCardView: View {
         }
     }
     private func addCard(){
-        let newCard = Card(title: title, description: description)
+        let newCard = Card(title: title, description: description, creation_date: date)
         column._cards.append(newCard)
-        
+                
         dissmiss()
     }
 }

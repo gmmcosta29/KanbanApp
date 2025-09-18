@@ -22,7 +22,8 @@ struct ColumnView: View {
                 .font(.headline)
                 .padding(.bottom,8)
             Button("+"){
-                showAddCardView = true            }
+                showAddCardView = true
+            }
             .font(.title2)
             .foregroundColor(.green)
             

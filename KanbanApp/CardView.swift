@@ -12,7 +12,8 @@ import SwiftData
 struct CardView: View {
     @Bindable var card: Card
     let column: Column
-    
+   
+    @State private var editview = false
     
     var body : some View {
         ZStack(alignment: .topTrailing){
@@ -41,6 +42,12 @@ struct CardView: View {
                         .background(Color.white.clipShape(Circle()))
                 }
                 .offset(x: 10, y: -10)
+        }
+        .onLongPressGesture(minimumDuration: 0.5) {
+            editview = true
+        }
+        .sheet(isPresented: $editview){
+            EditCardView(card: card,column: column)
         }
     }
 }
